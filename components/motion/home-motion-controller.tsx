@@ -9,39 +9,6 @@ export function HomeMotionController() {
     const root = document.documentElement;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const cleanups: Array<() => void> = [];
-    const orientationLinks = Array.from(
-      document.querySelectorAll<HTMLAnchorElement>("[data-home-orientation-link]"),
-    );
-    const orientationSections = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-home-section]"),
-    );
-
-    if (orientationLinks.length && orientationSections.length) {
-      const setCurrentSection = (sectionId: string) => {
-        for (const link of orientationLinks) {
-          const isCurrent =
-            link.dataset.homeOrientationLink === sectionId;
-          if (isCurrent) link.setAttribute("aria-current", "location");
-          else link.removeAttribute("aria-current");
-        }
-      };
-      const sectionObserver = new IntersectionObserver(
-        (entries) => {
-          const current = entries.find((entry) => entry.isIntersecting);
-          if (current) {
-            const sectionId = (current.target as HTMLElement).dataset.homeSection;
-            if (sectionId) setCurrentSection(sectionId);
-          }
-        },
-        {
-          rootMargin: "-42% 0px -48% 0px",
-          threshold: 0,
-        },
-      );
-
-      orientationSections.forEach((section) => sectionObserver.observe(section));
-      cleanups.push(() => sectionObserver.disconnect());
-    }
 
     if (reducedMotion.matches) {
       return () => cleanups.forEach((cleanup) => cleanup());

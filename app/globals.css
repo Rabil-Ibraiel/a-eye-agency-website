@@ -878,56 +878,6 @@
     opacity: 1;
   }
 
-  .home-orientation {
-    position: fixed;
-    bottom: 0.75rem;
-    left: 50%;
-    z-index: 38;
-    display: none;
-    overflow: hidden;
-    border: 1px solid rgb(242 238 229 / 16%);
-    background: rgb(11 12 12 / 82%);
-    box-shadow: 0 0.75rem 2.5rem rgb(0 0 0 / 32%);
-    backdrop-filter: blur(0.7rem);
-    transform: translate3d(-50%, 0, 0);
-  }
-
-  .home-orientation__link {
-    display: grid;
-    min-width: 5.25rem;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 0.65rem;
-    border-right: 1px solid rgb(242 238 229 / 12%);
-    color: rgb(242 238 229 / 58%);
-    font-family: var(--font-mono);
-    font-size: 0.56rem;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition:
-      color var(--duration-micro) ease,
-      background-color var(--duration-micro) ease;
-  }
-
-  .home-orientation__link:last-child {
-    border-right: 0;
-  }
-
-  .home-orientation__link > span:first-child {
-    color: var(--signal);
-  }
-
-  .home-orientation__link[aria-current="location"] {
-    background: var(--signal);
-    color: var(--signal-ink);
-  }
-
-  .home-orientation__link[aria-current="location"] > span:first-child {
-    color: currentColor;
-  }
-
   .home-hero__line {
     display: block;
     overflow: hidden;
@@ -1521,9 +1471,6 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .home-orientation {
-    display: flex;
-  }
 }
 
 @media (min-width: 64rem) and (min-height: 45rem) and (prefers-reduced-motion: no-preference) {
@@ -1679,15 +1626,6 @@
     color: var(--foreground);
   }
 
-  .home-orientation__link:hover {
-    background: rgb(242 238 229 / 8%);
-    color: var(--foreground);
-  }
-
-  .home-orientation__link[aria-current="location"]:hover {
-    background: var(--signal);
-    color: var(--signal-ink);
-  }
 }
 
 body:has(.mobile-nav[open]) {

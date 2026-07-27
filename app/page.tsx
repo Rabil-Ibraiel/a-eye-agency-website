@@ -44,24 +44,6 @@ export default function HomePage() {
         <HomeMotionController />
         <HomeIntroLoader />
         <span className="home-scroll-progress" aria-hidden="true" />
-        <nav className="home-orientation" aria-label="Landing page sections">
-          {[
-            ["01", "Work", "work"],
-            ["02", "Services", "services"],
-            ["03", "Process", "process"],
-            ["04", "Studio", "studio"],
-          ].map(([number, label, id]) => (
-            <a
-              key={id}
-              href={`#${id}`}
-              data-home-orientation-link={id}
-              className="home-orientation__link"
-            >
-              <span>{number}</span>
-              <span>{label}</span>
-            </a>
-          ))}
-        </nav>
 
         <section className="home-hero" id="top">
           <div className="home-hero__sticky">
