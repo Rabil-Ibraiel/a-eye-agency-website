@@ -136,11 +136,11 @@ export function FocusField({
         </div>
         <div aria-hidden="true" className="absolute inset-5 border border-white/15" />
         {homeMotion ? <span className="home-focus-field__scan" aria-hidden="true" /> : null}
-        <div className="focus-atlas__label absolute top-4 left-4 z-10 flex items-center gap-2 bg-[#0b0c0c]/78 px-2 py-1 font-mono text-[0.58rem] tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm">
+        <div className="focus-atlas__label absolute top-4 left-4 z-10 flex items-center gap-2 bg-black/78 px-2 py-1 font-mono text-[0.58rem] tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm">
           <Crosshair aria-hidden="true" className="size-3 text-primary" />
           Focus field / 01
         </div>
-        <div className="focus-atlas__state absolute right-4 bottom-4 z-10 bg-[#0b0c0c]/78 px-2 py-1 font-mono text-[0.58rem] tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm">
+        <div className="focus-atlas__state absolute right-4 bottom-4 z-10 bg-black/78 px-2 py-1 font-mono text-[0.58rem] tracking-[0.16em] text-white/70 uppercase backdrop-blur-sm">
           Raw → Resolved
         </div>
 
@@ -168,7 +168,7 @@ export function FocusField({
                     "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#151716]",
                     isActive
                       ? "border-primary bg-primary text-primary-foreground shadow-[0_0.25rem_1rem_rgba(211,255,61,0.2)]"
-                      : "border-white/35 bg-[#0b0c0c]/78 text-white hover:border-primary hover:text-primary",
+                      : "border-white/35 bg-black/78 text-white hover:border-primary hover:text-primary",
                   )}
                   style={{
                     left: `${point.x}%`,

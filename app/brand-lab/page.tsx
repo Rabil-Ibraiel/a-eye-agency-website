@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const swatches = [
-  ["Ink", "#0B0C0C"],
-  ["Paper", "#F2EEE5"],
+  ["Black", "#000000"],
+  ["White", "#FFFFFF"],
   ["Graphite", "#151716"],
-  ["Signal", "#B7FF3C"],
+  ["A-Eye Red", "#FF3B01"],
 ] as const;
 
 const replacementSpecs = [

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
@@ -19,7 +20,18 @@ function isActive(pathname: string, href: string) {
 }
 
 const desktopItemClass =
-  "relative flex h-11 items-center px-4 text-xs font-semibold tracking-[0.1em] text-[#f2eee5]/66 uppercase transition-colors duration-[160ms] hover:text-[#f2eee5] focus-visible:text-[#f2eee5]";
+  "relative flex h-11 items-center px-4 text-xs font-semibold tracking-[0.1em] text-white/66 uppercase transition-colors duration-[160ms] hover:text-white focus-visible:text-white";
+
+const brandMark = (
+  <Image
+    src="/brand/a-eye-logo.png"
+    alt=""
+    width={220}
+    height={245}
+    priority
+    className="h-9 w-auto"
+  />
+);
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -30,7 +42,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0b0c0c]/96 text-[#f2eee5]">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-black/96 text-white">
       <a
         href="#main-content"
         className="fixed top-2 left-2 z-[100] -translate-y-24 bg-primary px-4 py-3 font-semibold text-primary-foreground transition-transform focus:translate-y-0"
@@ -41,17 +53,18 @@ export function SiteHeader() {
         {pathname === "/" ? (
           <span
             aria-current="page"
-            className="flex min-h-11 items-center justify-self-start text-[1.35rem] font-semibold tracking-[-0.055em]"
+            aria-label="A-Eye home"
+            className="flex min-h-11 items-center justify-self-start"
           >
-            A-Eye<span className="text-primary">.</span>
+            {brandMark}
           </span>
         ) : (
           <Link
             href="/"
             aria-label="A-Eye home"
-            className="flex min-h-11 items-center justify-self-start text-[1.35rem] font-semibold tracking-[-0.055em]"
+            className="flex min-h-11 items-center justify-self-start transition-opacity duration-[160ms] hover:opacity-78"
           >
-            A-Eye<span className="text-primary">.</span>
+            {brandMark}
           </Link>
         )}
 
@@ -67,7 +80,7 @@ export function SiteHeader() {
                 aria-current="page"
                 className={cn(
                   desktopItemClass,
-                  "bg-white/[0.07] text-[#f2eee5] after:absolute after:right-4 after:bottom-1 after:left-4 after:h-px after:bg-primary",
+                  "bg-white/[0.07] text-white after:absolute after:right-4 after:bottom-1 after:left-4 after:h-px after:bg-primary",
                 )}
               >
                 {item.label}
@@ -112,13 +125,13 @@ export function SiteHeader() {
             }
           }}
         >
-          <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-white/25 text-[#f2eee5] transition-colors hover:bg-white/10 focus-visible:bg-white/10">
+          <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-white/25 text-white transition-colors hover:bg-white/10 focus-visible:bg-white/10">
             <span className="sr-only group-open:hidden">Open navigation</span>
             <span className="sr-only hidden group-open:block">Close navigation</span>
             <Menu aria-hidden="true" className="size-5 group-open:hidden" />
             <X aria-hidden="true" className="hidden size-5 group-open:block" />
           </summary>
-          <div className="fixed inset-x-0 top-[4.25rem] bottom-0 z-30 flex flex-col border-t border-white/10 bg-[#0b0c0c] px-[var(--gutter)] py-3">
+          <div className="fixed inset-x-0 top-[4.25rem] bottom-0 z-30 flex flex-col border-t border-white/10 bg-black px-[var(--gutter)] py-3">
             <nav aria-label="Mobile navigation" className="flex flex-1 flex-col">
               {navigation.map((item, index) => {
                 const active = isActive(pathname, item.href);
@@ -129,7 +142,7 @@ export function SiteHeader() {
                 return active ? (
                   <span key={item.href} aria-current="page" className={className}>
                     <span>{item.label}</span>
-                    <span className="font-mono text-xs tracking-[0.13em] text-[#f2eee5]/48">
+                    <span className="font-mono text-xs tracking-[0.13em] text-white/48">
                       0{index + 1}
                     </span>
                   </span>
@@ -142,7 +155,7 @@ export function SiteHeader() {
                     onClick={closeMobileNav}
                   >
                     <span>{item.label}</span>
-                    <span className="font-mono text-xs tracking-[0.13em] text-[#f2eee5]/48">
+                    <span className="font-mono text-xs tracking-[0.13em] text-white/48">
                       0{index + 1}
                     </span>
                   </Link>

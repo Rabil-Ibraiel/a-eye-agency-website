@@ -1,6 +1,6 @@
 ---
-name: A-Eye Chromatic Motion Stage
-description: A cinematic portfolio world built from saturated stage fields, moving image flats, and kinetic typography.
+name: A-Eye Signal Stage
+description: A cinematic black-and-white portfolio world punctuated by the A-Eye red mark and kinetic typography.
 ---
 
 <!-- SEED: established with the user before implementation; re-run $impeccable document once there's code to capture the actual tokens and components. -->
@@ -9,15 +9,15 @@ description: A cinematic portfolio world built from saturated stage fields, movi
 
 ## Overview
 
-**Creative North Star: "The Chromatic Motion Stage"**
+**Creative North Star: "The Signal Stage"**
 
-The site behaves like a live visual-production stage rather than a page assembled from sections. Saturated full-viewport fields are the rooms; cinematic images are physical flats moving through them; typography is a performer that can be cropped, occluded, stretched across a threshold, or held completely still when the work needs the frame.
+The site behaves like a live visual-production stage rather than a page assembled from sections. Black and white establish the visual field; A-Eye Red acts as the decisive signal. Cinematic images are physical flats moving through the space, and typography can be cropped, occluded, stretched across a threshold, or held completely still when the work needs the frame.
 
 The experience alternates between spectacle and explanation. Work occupies clean rooms without competing labels. Context lives in visible threshold bands between rooms, so visitors always understand where they are without reducing the imagery to cards.
 
 **Key Characteristics:**
 
-- Full-frame color fields instead of a persistent dark canvas
+- Full-frame black and white fields with disciplined red interventions
 - Large condensed lettering used as spatial material
 - Cinematic images treated as stage planes with real depth
 - Strict alternation between work rooms and readable thresholds
@@ -25,32 +25,25 @@ The experience alternates between spectacle and explanation. Work occupies clean
 
 ## Colors
 
-The palette is a full production palette, not one accent sprinkled over neutrals.
+The palette is deliberately strict. Black and white carry the composition; A-Eye Red is reserved for identity, focus, action, and authored motion cues.
 
 ### Primary
 
-- **Stage Cobalt**: the opening field and recurring spatial anchor; saturated enough to feel physical, dark enough to support black and off-white type.
-- **Curtain Vermilion**: threshold bands, project transitions, and decisive actions.
+- **Black**: `#000000`; the primary stage, navigation, and hard spatial edge.
+- **White**: `#FFFFFF`; the reading field and primary contrast color.
+- **A-Eye Red**: `#FF3B01`; the identity signal, active state, focus ring, and decisive action.
 
-### Secondary
+Supporting grays may be used only to create hierarchy within black or white fields. They never become new brand colors.
 
-- **Cue Butter**: brief moments of orientation, selection, and process emphasis.
-- **Optical Blue**: a brighter blue used only when separating depth planes from the main cobalt field.
-
-### Neutral
-
-- **Soft Silver**: quiet reading rooms and supporting pages.
-- **Ink Black**: primary lettering, navigation, and hard stage edges.
-- **Projection White**: text and controls on saturated fields.
-
-**The Field Rule.** A dominant color owns an entire room or threshold. Do not reduce the palette to tiny badges and borders.
+**The Signal Rule.** Red must identify a meaningful signal: the logo, active navigation, a primary action, focus, selection, or a key transition. It is not general decoration.
 
 ## Typography
 
-**Display Font:** Barlow Condensed with a narrow system-sans fallback  
-**Body Font:** Funnel Sans with a modern system-sans fallback
+**Primary Font:** Alfabet across display, interface, and body typography, using licensed webfont files when available.
 
-**Character:** Display type has the scale and vertical authority of a festival poster or stage title. Body type is open, quiet, and contemporary so it can survive over changing fields without competing with the work.
+**Fallback:** Helvetica Neue, Helvetica, Arial, sans-serif.
+
+**Character:** Alfabet gives the identity a direct, graphic voice while remaining controlled enough for service and case-study copy. Weight, scale, and spacing create hierarchy without introducing a second type family.
 
 ### Hierarchy
 

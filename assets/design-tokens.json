@@ -1,0 +1,12 @@
+{
+  "brand": {
+    "color": {
+      "black": "#000000",
+      "white": "#FFFFFF",
+      "red": "#FF3B01"
+    },
+    "font": {
+      "family": "\"Alfabet\", \"Helvetica Neue\", Helvetica, Arial, sans-serif"
+    }
+  }
+}

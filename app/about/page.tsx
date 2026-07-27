@@ -37,7 +37,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-x-5 bottom-5 grid gap-2 sm:grid-cols-3">
               {["Human direction", "Expanded production", "Controlled craft"].map((label, index) => (
-                <div key={label} className="border border-white/20 bg-[#0b0c0c]/78 p-4 text-white backdrop-blur-sm">
+                <div key={label} className="border border-white/20 bg-black/78 p-4 text-white backdrop-blur-sm">
                   <p className="font-mono text-[0.58rem] tracking-[0.14em] text-primary">0{index + 1}</p>
                   <p className="mt-3 text-sm">{label}</p>
                 </div>

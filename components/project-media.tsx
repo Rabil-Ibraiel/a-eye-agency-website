@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 
 const treatmentClasses = {
   "signal-field":
-    "bg-[radial-gradient(circle_at_70%_35%,var(--signal)_0_8%,transparent_8.5%),linear-gradient(135deg,#161816_0_52%,#272b26_52%_54%,#0b0c0c_54%)]",
+    "bg-[radial-gradient(circle_at_70%_35%,var(--signal)_0_8%,transparent_8.5%),linear-gradient(135deg,#141414_0_52%,#292929_52%_54%,#000000_54%)]",
   afterimage:
-    "bg-[linear-gradient(110deg,transparent_0_22%,#b7ff3c_22%_42%,transparent_42%),linear-gradient(75deg,#191b19_0_46%,#f2eee5_46%_61%,#0b0c0c_61%)]",
+    "bg-[linear-gradient(110deg,transparent_0_22%,#ff3b01_22%_42%,transparent_42%),linear-gradient(75deg,#151515_0_46%,#ffffff_46%_61%,#000000_61%)]",
   "material-study":
-    "bg-[radial-gradient(ellipse_at_50%_50%,#5d625a_0_12%,#20231f_13%_32%,#0b0c0c_33%)]",
+    "bg-[radial-gradient(ellipse_at_50%_50%,#5c5c5c_0_12%,#202020_13%_32%,#000000_33%)]",
   "focus-aperture":
-    "bg-[radial-gradient(circle_at_62%_44%,#f2eee5_0_22%,#b7ff3c_22.5%_25%,#141614_25.5%)]",
+    "bg-[radial-gradient(circle_at_62%_44%,#ffffff_0_22%,#ff3b01_22.5%_25%,#141414_25.5%)]",
 } as const;
 
 export function ProjectMedia({

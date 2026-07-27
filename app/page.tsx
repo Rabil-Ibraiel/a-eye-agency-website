@@ -251,7 +251,7 @@ export default function HomePage() {
                 <span className="home-about__connector" aria-hidden="true" />
                 <div className="absolute inset-x-5 bottom-5 grid grid-cols-3 gap-2">
                   {["Direction", "Production", "Motion"].map((label, index) => (
-                    <div key={label} className="home-about__discipline border border-white/20 bg-[#0b0c0c]/75 p-3 backdrop-blur-sm">
+                    <div key={label} className="home-about__discipline border border-white/20 bg-black/75 p-3 backdrop-blur-sm">
                       <p className="font-mono text-[0.55rem] tracking-[0.12em] text-primary uppercase">0{index + 1}</p>
                       <p className="mt-2 text-xs text-white/76">{label}</p>
                     </div>

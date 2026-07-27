@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "../assets/design-tokens.css";
+
+@font-face {
+  font-family: "Alfabet";
+  src: local("Alfabet Regular"), local("Alfabet");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -49,19 +58,19 @@
 }
 
 :root {
-  --ink: #0b0c0c;
-  --paper: #f2eee5;
-  --graphite: #151716;
-  --graphite-high: #1d1f1e;
-  --quiet: #9a9d96;
-  --rule: #30332f;
-  --signal: #b7ff3c;
-  --signal-ink: #0b0c0c;
+  --ink: var(--brand-color-black);
+  --paper: var(--brand-color-white);
+  --graphite: #0d0d0d;
+  --graphite-high: #171717;
+  --quiet: #a3a3a3;
+  --rule: #2b2b2b;
+  --signal: var(--brand-color-red);
+  --signal-ink: #000000;
   --background: var(--ink);
   --foreground: var(--paper);
   --card: var(--graphite);
   --card-foreground: var(--paper);
-  --popover: #111312;
+  --popover: #0d0d0d;
   --popover-foreground: var(--paper);
   --primary: var(--signal);
   --primary-foreground: var(--signal-ink);
@@ -71,15 +80,15 @@
   --muted-foreground: var(--quiet);
   --accent: var(--signal);
   --accent-foreground: var(--signal-ink);
-  --destructive: #ff7068;
+  --destructive: #ff3b01;
   --border: var(--rule);
-  --input: #3b3e39;
+  --input: #363636;
   --ring: var(--signal);
   --chart-1: var(--signal);
-  --chart-2: #f2eee5;
-  --chart-3: #9a9d96;
-  --chart-4: #545952;
-  --chart-5: #252824;
+  --chart-2: #ffffff;
+  --chart-3: #a3a3a3;
+  --chart-4: #5c5c5c;
+  --chart-5: #242424;
   --radius: 0.25rem;
   --sidebar: var(--graphite);
   --sidebar-foreground: var(--paper);
@@ -89,9 +98,9 @@
   --sidebar-accent-foreground: var(--paper);
   --sidebar-border: var(--rule);
   --sidebar-ring: var(--signal);
-  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  --font-editorial: Georgia, "Times New Roman", Times, serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-sans: var(--brand-font-family);
+  --font-editorial: var(--brand-font-family);
+  --font-mono: var(--brand-font-family);
   --layout-max: 90rem;
   --gutter: clamp(1rem, 2.2vw, 2.5rem);
   --grid-gap: clamp(0.75rem, 1.4vw, 1.5rem);
