@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">Resolved focus field</title>
+  <desc id="desc">The same editorial field brought into alignment inside a crisp central aperture.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#090b0a"/>
+      <stop offset=".58" stop-color="#151916"/>
+      <stop offset="1" stop-color="#0d100e"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f3edde"/>
+      <stop offset="1" stop-color="#cfc8b9"/>
+    </linearGradient>
+    <radialGradient id="signal" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#c7ff45" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#c7ff45" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#f1ebdd" stroke-opacity=".045"/>
+      <circle cx="1" cy="1" r="1" fill="#f1ebdd" fill-opacity=".16"/>
+    </pattern>
+    <clipPath id="aperture"><rect x="518" y="310" width="564" height="380"/></clipPath>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="72" y="64" width="1456" height="872" rx="8" fill="url(#grid)" stroke="#f1ebdd" stroke-opacity=".12"/>
+  <ellipse cx="800" cy="500" rx="458" ry="350" fill="url(#signal)" filter="url(#soft)"/>
+  <g opacity=".18">
+    <path d="m102 816 558-465 53 64-558 466z" fill="#f1ebdd"/>
+    <path d="m691 192 348 91-99 379-348-91z" fill="#303530"/>
+    <path d="m884 286 450 118-44 168-450-118z" fill="#f1ebdd"/>
+    <path d="m1004 614 468-126 75 278-468 126z" fill="#252a26"/>
+  </g>
+  <g clip-path="url(#aperture)">
+    <rect x="518" y="310" width="564" height="380" fill="#111411"/>
+    <path d="M364 744 806 280l165 157-442 464z" fill="url(#paper)"/>
+    <path d="m672 282 456 120-45 172-456-120z" fill="#343a34"/>
+    <path d="m700 472 466-125 42 158-466 125z" fill="#c7ff45"/>
+    <path d="m776 643 290-184 91 144-290 184z" fill="#e8e1d3"/>
+    <circle cx="810" cy="502" r="170" fill="none" stroke="#0b0d0c" stroke-opacity=".42" stroke-width="2"/>
+    <circle cx="810" cy="502" r="116" fill="none" stroke="#0b0d0c" stroke-opacity=".28"/>
+    <path d="M514 500h572M800 306v388" stroke="#0b0d0c" stroke-opacity=".22"/>
+  </g>
+  <g fill="none" stroke-linecap="square">
+    <rect x="518" y="310" width="564" height="380" stroke="#f1ebdd" stroke-opacity=".78" stroke-width="2"/>
+    <path d="M518 354v-44h44M1038 310h44v44M1082 646v44h-44M562 690h-44v-44" stroke="#c7ff45" stroke-width="5"/>
+    <circle cx="800" cy="500" r="44" stroke="#0b0d0c" stroke-opacity=".72"/>
+    <circle cx="800" cy="500" r="4" fill="#0b0d0c" stroke="none"/>
+    <path d="M736 500h128M800 436v128" stroke="#0b0d0c" stroke-opacity=".32"/>
+  </g>
+  <g fill="#f1ebdd" fill-opacity=".62" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3">
+    <text x="94" y="101">FIELD / RESOLVED</text>
+    <text x="1316" y="908">01:LOCKED</text>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".7" stroke-width="2">
+    <path d="M48 112V40h72M1480 40h72v72M1552 888v72h-72M120 960H48v-72"/>
+  </g>
+</svg>

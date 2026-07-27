@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">Raw focus field</title>
+  <desc id="desc">An unresolved editorial field of offset fragments, scanning lines, and a central focus frame.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#090b0a"/>
+      <stop offset=".58" stop-color="#151916"/>
+      <stop offset="1" stop-color="#0d100e"/>
+    </linearGradient>
+    <radialGradient id="signal" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#c7ff45" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#c7ff45" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#f1ebdd" stroke-opacity=".055"/>
+      <circle cx="1" cy="1" r="1" fill="#f1ebdd" fill-opacity=".18"/>
+    </pattern>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <clipPath id="field"><rect x="72" y="64" width="1456" height="872" rx="8"/></clipPath>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="72" y="64" width="1456" height="872" rx="8" fill="url(#grid)" stroke="#f1ebdd" stroke-opacity=".12"/>
+  <g clip-path="url(#field)">
+    <ellipse cx="1015" cy="542" rx="420" ry="380" fill="url(#signal)" filter="url(#soft)"/>
+    <path d="M-60 742 550 238l146 176L85 918z" fill="#f1ebdd" fill-opacity=".08"/>
+    <path d="m102 816 558-465 53 64-558 466z" fill="#f1ebdd" fill-opacity=".16"/>
+    <path d="m691 192 348 91-99 379-348-91z" fill="#2d332e"/>
+    <path d="m884 286 450 118-44 168-450-118z" fill="#f1ebdd" fill-opacity=".18"/>
+    <path d="m1062 94 390 306-79 100-390-306z" fill="#c7ff45" fill-opacity=".11"/>
+    <path d="m1004 614 468-126 75 278-468 126z" fill="#252a26"/>
+    <path d="m739 756 314-199 89 140-314 199z" fill="#f1ebdd" fill-opacity=".12"/>
+    <g opacity=".32" filter="url(#soft)">
+      <rect x="390" y="229" width="390" height="510" fill="#f1ebdd" transform="rotate(13 390 229)"/>
+      <circle cx="1060" cy="476" r="214" fill="#c7ff45"/>
+    </g>
+    <g fill="none" stroke="#f1ebdd" stroke-opacity=".16">
+      <circle cx="1034" cy="505" r="188"/>
+      <circle cx="1034" cy="505" r="250"/>
+      <path d="M1034 135v740M664 505h740"/>
+    </g>
+    <g stroke="#c7ff45" stroke-opacity=".5">
+      <path d="M278 124v752"/>
+      <path d="M284 124v752" stroke-opacity=".12"/>
+    </g>
+  </g>
+  <g fill="none" stroke-linecap="square">
+    <rect x="518" y="310" width="564" height="380" stroke="#f1ebdd" stroke-opacity=".55" stroke-width="2"/>
+    <path d="M518 354v-44h44M1038 310h44v44M1082 646v44h-44M562 690h-44v-44" stroke="#c7ff45" stroke-width="5"/>
+    <circle cx="800" cy="500" r="44" stroke="#f1ebdd" stroke-opacity=".5"/>
+    <circle cx="800" cy="500" r="4" fill="#c7ff45" stroke="none"/>
+    <path d="M736 500h128M800 436v128" stroke="#f1ebdd" stroke-opacity=".24"/>
+  </g>
+  <g fill="#f1ebdd" fill-opacity=".55" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3">
+    <text x="94" y="101">FIELD / RAW</text>
+    <text x="1326" y="908">00:UNSET</text>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".7" stroke-width="2">
+    <path d="M48 112V40h72M1480 40h72v72M1552 888v72h-72M120 960H48v-72"/>
+  </g>
+</svg>

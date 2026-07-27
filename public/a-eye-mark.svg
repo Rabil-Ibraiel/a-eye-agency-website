@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">A-Eye temporary focus mark</title>
+  <desc id="desc">A precise square aperture containing an angular A form and a signal green focal point.</desc>
+  <rect width="64" height="64" rx="12" fill="#0b0d0c"/>
+  <path d="M13 21v-8h8M43 13h8v8M51 43v8h-8M21 51h-8v-8" fill="none" stroke="#f1ebdd" stroke-width="2.5" stroke-linecap="square"/>
+  <path d="M21 43 32 20l11 23M25.4 34.5h13.2" fill="none" stroke="#f1ebdd" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="32" cy="34.5" r="3.5" fill="#c7ff45"/>
+</svg>

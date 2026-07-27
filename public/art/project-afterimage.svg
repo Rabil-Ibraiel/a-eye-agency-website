@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">Afterimage concept study</title>
+  <desc id="desc">Cropped optical rings and offset warm-paper echoes form a cinematic study in memory and motion.</desc>
+  <defs>
+    <linearGradient id="bg" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#090b0a"/><stop offset="1" stop-color="#171a17"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3eddf"/><stop offset="1" stop-color="#c9c3b6"/></linearGradient>
+    <clipPath id="window"><rect x="160" y="104" width="1280" height="792" rx="4"/></clipPath>
+    <mask id="cut"><rect width="1600" height="1000" fill="#fff"/><rect x="720" width="160" height="1000" fill="#000"/><rect y="446" width="1600" height="108" fill="#000"/></mask>
+    <pattern id="ticks" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#f1ebdd" fill-opacity=".11"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="160" y="104" width="1280" height="792" fill="url(#ticks)" stroke="#f1ebdd" stroke-opacity=".15"/>
+  <g clip-path="url(#window)">
+    <rect x="160" y="104" width="1280" height="792" fill="#0e110f"/>
+    <g fill="none" mask="url(#cut)">
+      <circle cx="790" cy="504" r="454" stroke="#f1ebdd" stroke-opacity=".08" stroke-width="118"/>
+      <circle cx="746" cy="504" r="338" stroke="#f1ebdd" stroke-opacity=".15" stroke-width="76"/>
+      <circle cx="704" cy="504" r="230" stroke="url(#paper)" stroke-width="54"/>
+      <circle cx="674" cy="504" r="134" stroke="#c7ff45" stroke-width="24"/>
+    </g>
+    <g opacity=".5" transform="translate(94)">
+      <circle cx="790" cy="504" r="454" fill="none" stroke="#c7ff45" stroke-opacity=".08" stroke-width="2"/>
+      <circle cx="746" cy="504" r="338" fill="none" stroke="#c7ff45" stroke-opacity=".15" stroke-width="2"/>
+      <circle cx="704" cy="504" r="230" fill="none" stroke="#c7ff45" stroke-width="2"/>
+    </g>
+    <path d="M720 104h160v792H720z" fill="#151915"/>
+    <path d="M160 446h1280v108H160z" fill="#151915"/>
+    <path d="M770 104h10v792h-10zM160 494h1280v10H160z" fill="#c7ff45"/>
+    <path d="m880 104 330 792h230L1110 104z" fill="#f1ebdd" fill-opacity=".06"/>
+    <rect x="1040" y="226" width="220" height="548" fill="#f1ebdd" fill-opacity=".045" stroke="#f1ebdd" stroke-opacity=".15"/>
+    <g fill="#f1ebdd" fill-opacity=".3">
+      <circle cx="1100" cy="286" r="3"/><circle cx="1200" cy="286" r="3"/><circle cx="1100" cy="714" r="3"/><circle cx="1200" cy="714" r="3"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".7" stroke-width="2">
+    <path d="M122 170v-66h66M1412 104h66v66M1478 830v66h-66M188 896h-66v-66"/>
+  </g>
+  <g fill="#f1ebdd" fill-opacity=".52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3">
+    <text x="160" y="80">AFTERIMAGE / CONCEPT STUDY</text><text x="1298" y="930">A–01</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">A-Eye studio grid texture</title>
+  <desc id="desc">A restrained graphite field with editorial grid lines, registration points, and sparse signal markers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a0c0b"/><stop offset=".5" stop-color="#121512"/><stop offset="1" stop-color="#090b0a"/></linearGradient>
+    <pattern id="fine" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" fill="none" stroke="#f1ebdd" stroke-opacity=".025"/><circle cx="1" cy="1" r=".8" fill="#f1ebdd" fill-opacity=".1"/></pattern>
+    <pattern id="coarse" width="256" height="256" patternUnits="userSpaceOnUse"><rect width="256" height="256" fill="none" stroke="#f1ebdd" stroke-opacity=".055"/><path d="M128 0v256M0 128h256" stroke="#f1ebdd" stroke-opacity=".025"/></pattern>
+    <radialGradient id="light" cx="65%" cy="38%" r="52%"><stop stop-color="#f1ebdd" stop-opacity=".045"/><stop offset="1" stop-color="#f1ebdd" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#fine)"/>
+  <rect width="1600" height="1000" fill="url(#coarse)"/>
+  <rect width="1600" height="1000" fill="url(#light)"/>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".1">
+    <circle cx="322" cy="286" r="84"/><circle cx="322" cy="286" r="132"/>
+    <circle cx="1214" cy="702" r="118"/><circle cx="1214" cy="702" r="174"/>
+    <path d="M322 112v348M148 286h348M1214 470v464M982 702h464"/>
+  </g>
+  <g fill="#c7ff45">
+    <rect x="314" y="278" width="16" height="16"/><rect x="1206" y="694" width="16" height="16"/>
+    <rect x="790" y="102" width="20" height="3"/><rect x="790" y="895" width="20" height="3"/>
+  </g>
+  <g fill="#f1ebdd" fill-opacity=".18">
+    <circle cx="192" cy="156" r="3"/><circle cx="1408" cy="156" r="3"/><circle cx="192" cy="844" r="3"/><circle cx="1408" cy="844" r="3"/>
+    <circle cx="800" cy="500" r="3"/><circle cx="544" cy="500" r="2"/><circle cx="1056" cy="500" r="2"/>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".28" stroke-width="2">
+    <path d="M78 166V78h88M1434 78h88v88M1522 834v88h-88M166 922H78v-88"/>
+    <rect x="544" y="244" width="512" height="512" stroke-opacity=".08"/>
+  </g>
+</svg>

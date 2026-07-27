@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Perception system process</title>
+  <desc id="desc">Five connected stations transform scattered fragments into a clear framed composition.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a0c0b"/><stop offset="1" stop-color="#141815"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="#f1ebdd" stroke-opacity=".045"/></pattern>
+    <clipPath id="s1"><rect x="98" y="246" width="240" height="320"/></clipPath>
+    <clipPath id="s2"><rect x="389" y="246" width="240" height="320"/></clipPath>
+    <clipPath id="s3"><rect x="680" y="246" width="240" height="320"/></clipPath>
+    <clipPath id="s4"><rect x="971" y="246" width="240" height="320"/></clipPath>
+    <clipPath id="s5"><rect x="1262" y="246" width="240" height="320"/></clipPath>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="50" y="48" width="1500" height="804" rx="8" fill="url(#grid)" stroke="#f1ebdd" stroke-opacity=".12"/>
+  <path d="M92 624h1416" fill="none" stroke="#f1ebdd" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M338 624h51M629 624h51M920 624h51M1211 624h51" stroke="#c7ff45" stroke-width="4"/>
+  <g fill="#0f120f" stroke="#f1ebdd" stroke-opacity=".16">
+    <rect x="98" y="246" width="240" height="320"/><rect x="389" y="246" width="240" height="320"/><rect x="680" y="246" width="240" height="320"/><rect x="971" y="246" width="240" height="320"/><rect x="1262" y="246" width="240" height="320"/>
+  </g>
+  <g clip-path="url(#s1)">
+    <path d="m73 488 112-186 76 46-112 186z" fill="#f1ebdd" fill-opacity=".45"/>
+    <path d="m218 219 150 96-31 49-150-96z" fill="#343a34"/>
+    <circle cx="274" cy="486" r="68" fill="#c7ff45" fill-opacity=".17"/>
+    <path d="m120 430 195-76M163 540l132-228" stroke="#f1ebdd" stroke-opacity=".22"/>
+  </g>
+  <g clip-path="url(#s2)">
+    <path d="m418 494 112-186 76 46-112 186z" fill="#f1ebdd" fill-opacity=".55"/>
+    <path d="m435 353 168 108-31 49-168-108z" fill="#343a34"/>
+    <circle cx="542" cy="387" r="58" fill="none" stroke="#c7ff45" stroke-opacity=".45"/>
+    <path d="M509 246v320" stroke="#f1ebdd" stroke-opacity=".14"/>
+  </g>
+  <g clip-path="url(#s3)">
+    <rect x="720" y="298" width="160" height="216" fill="#f1ebdd" fill-opacity=".12" stroke="#f1ebdd" stroke-opacity=".3"/>
+    <path d="m706 478 112-186 76 46-112 186z" fill="#f1ebdd" fill-opacity=".66"/>
+    <path d="m708 350 184 118-27 42-184-118z" fill="#c7ff45" fill-opacity=".7"/>
+    <circle cx="800" cy="406" r="42" fill="none" stroke="#0b0d0c" stroke-opacity=".5"/>
+  </g>
+  <g clip-path="url(#s4)">
+    <rect x="1014" y="290" width="154" height="232" fill="#f1ebdd" fill-opacity=".08" stroke="#f1ebdd" stroke-opacity=".3"/>
+    <path d="m1000 476 112-186 76 46-112 186z" fill="#e5dfd2"/>
+    <path d="m1000 350 184 118-27 42-184-118z" fill="#c7ff45"/>
+    <circle cx="1091" cy="406" r="42" fill="none" stroke="#0b0d0c" stroke-opacity=".48"/>
+    <path d="M1091 270v272M992 406h198" stroke="#0b0d0c" stroke-opacity=".18"/>
+  </g>
+  <g clip-path="url(#s5)">
+    <rect x="1302" y="286" width="160" height="240" fill="#111411" stroke="#c7ff45" stroke-width="3"/>
+    <path d="m1291 476 112-186 76 46-112 186z" fill="#e5dfd2"/>
+    <path d="m1291 350 184 118-27 42-184-118z" fill="#c7ff45"/>
+    <circle cx="1382" cy="406" r="42" fill="none" stroke="#0b0d0c" stroke-opacity=".5"/>
+    <circle cx="1382" cy="406" r="4" fill="#0b0d0c"/>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".28">
+    <circle cx="218" cy="624" r="8"/><circle cx="509" cy="624" r="8"/><circle cx="800" cy="624" r="8"/><circle cx="1091" cy="624" r="8"/><circle cx="1382" cy="624" r="8"/>
+  </g>
+  <g fill="#f1ebdd" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <g font-size="13" letter-spacing="3" fill-opacity=".5"><text x="98" y="214">DISCOVER</text><text x="389" y="214">DEFINE</text><text x="680" y="214">CREATE</text><text x="971" y="214">PRODUCE</text><text x="1262" y="214">REFINE</text></g>
+    <g font-size="48" font-weight="600"><text x="98" y="716">01</text><text x="389" y="716">02</text><text x="680" y="716">03</text><text x="971" y="716">04</text><text x="1262" y="716">05</text></g>
+    <text x="80" y="94" font-size="14" letter-spacing="3" fill-opacity=".56">PERCEPTION SYSTEM / FROM SIGNAL TO FRAME</text>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".58" stroke-width="2"><path d="M24 110V22h88M1488 22h88v88M1576 790v88h-88M112 878H24v-88"/></g>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">Frame Logic concept study</title>
+  <desc id="desc">Layered editorial frames align an angular warm-paper structure with precise crop marks and a green signal axis.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a0c0b"/><stop offset=".55" stop-color="#161a17"/><stop offset="1" stop-color="#0d100e"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4eee0"/><stop offset="1" stop-color="#bbb5a9"/></linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0v64" fill="none" stroke="#f1ebdd" stroke-opacity=".05"/></pattern>
+    <clipPath id="stage"><rect x="96" y="72" width="1408" height="856" rx="6"/></clipPath>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="96" y="72" width="1408" height="856" rx="6" fill="url(#grid)" stroke="#f1ebdd" stroke-opacity=".14"/>
+  <g clip-path="url(#stage)">
+    <path d="M107 792 525 82h312L419 792z" fill="#f1ebdd" fill-opacity=".05"/>
+    <path d="m395 762 294-500 407 239-294 500z" fill="url(#paper)"/>
+    <path d="m736 200 443 260-79 134-443-260z" fill="#2c322d"/>
+    <path d="m605 405 421 247-47 80-421-247z" fill="#c7ff45"/>
+    <path d="m930 213 354 208-201 342-354-208z" fill="none" stroke="#f1ebdd" stroke-opacity=".4" stroke-width="2"/>
+    <path d="m984 265 250 147-151 257-250-147z" fill="#111411" fill-opacity=".75" stroke="#f1ebdd" stroke-opacity=".18"/>
+    <path d="M326 221h312v558H326z" fill="none" stroke="#f1ebdd" stroke-opacity=".15"/>
+    <path d="M234 500h1132" stroke="#f1ebdd" stroke-opacity=".08"/>
+    <path d="M800 72v856" stroke="#c7ff45" stroke-opacity=".35"/>
+    <g fill="none" stroke="#0b0d0c" stroke-opacity=".28">
+      <circle cx="800" cy="500" r="128"/><circle cx="800" cy="500" r="210"/>
+    </g>
+    <g fill="#0b0d0c" fill-opacity=".7">
+      <circle cx="800" cy="500" r="5"/><circle cx="689" cy="262" r="5"/><circle cx="1026" cy="652" r="5"/>
+    </g>
+  </g>
+  <g fill="none" stroke-linecap="square">
+    <rect x="560" y="208" width="554" height="584" stroke="#f1ebdd" stroke-opacity=".44" stroke-width="2"/>
+    <path d="M560 264v-56h56M1058 208h56v56M1114 736v56h-56M616 792h-56v-56" stroke="#c7ff45" stroke-width="4"/>
+  </g>
+  <g fill="#f1ebdd" fill-opacity=".52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3">
+    <text x="96" y="48">FRAME LOGIC / CONCEPT STUDY</text><text x="1380" y="962">F–02</text>
+  </g>
+</svg>

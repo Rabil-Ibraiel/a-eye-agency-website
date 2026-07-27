@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="title desc">
+  <title id="title">Signal Bloom concept study</title>
+  <desc id="desc">A controlled radial field opens through layered shutters, balancing graphite, warm paper, and signal green.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="48%" r="74%"><stop stop-color="#1a1e1a"/><stop offset=".6" stop-color="#0c0f0d"/><stop offset="1" stop-color="#080a09"/></radialGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3eddf"/><stop offset="1" stop-color="#c4beb1"/></linearGradient>
+    <clipPath id="stage"><rect x="128" y="88" width="1344" height="824" rx="8"/></clipPath>
+    <mask id="iris"><rect width="1600" height="1000" fill="#fff"/><circle cx="800" cy="500" r="164" fill="#000"/></mask>
+    <pattern id="micro" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#f1ebdd" fill-opacity=".1"/></pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="128" y="88" width="1344" height="824" rx="8" fill="url(#micro)" stroke="#f1ebdd" stroke-opacity=".13"/>
+  <g clip-path="url(#stage)">
+    <g mask="url(#iris)">
+      <path d="M800 500 362-10h294z" fill="#f1ebdd" fill-opacity=".08"/>
+      <path d="m800 500 52-622 220 198z" fill="#f1ebdd" fill-opacity=".16"/>
+      <path d="m800 500 468-411 92 284z" fill="#c7ff45" fill-opacity=".18"/>
+      <path d="m800 500 690-102-82 284z" fill="#f1ebdd" fill-opacity=".08"/>
+      <path d="m800 500 550 425-286 77z" fill="#f1ebdd" fill-opacity=".15"/>
+      <path d="m800 500 139 604-257-139z" fill="#c7ff45" fill-opacity=".12"/>
+      <path d="m800 500-324 594-162-251z" fill="#f1ebdd" fill-opacity=".08"/>
+      <path d="M800 500 96 821l-24-298z" fill="#f1ebdd" fill-opacity=".16"/>
+      <path d="M800 500 87 244l215-215z" fill="#c7ff45" fill-opacity=".09"/>
+    </g>
+    <circle cx="800" cy="500" r="316" fill="none" stroke="#f1ebdd" stroke-opacity=".1"/>
+    <circle cx="800" cy="500" r="238" fill="none" stroke="#f1ebdd" stroke-opacity=".22" stroke-width="2"/>
+    <circle cx="800" cy="500" r="164" fill="#c7ff45"/>
+    <circle cx="800" cy="500" r="112" fill="#0b0d0c"/>
+    <circle cx="800" cy="500" r="18" fill="url(#paper)"/>
+    <path d="M800 88v824M128 500h1344" stroke="#f1ebdd" stroke-opacity=".1"/>
+    <path d="M800 260v480M560 500h480" stroke="#0b0d0c" stroke-opacity=".38"/>
+    <g fill="url(#paper)">
+      <rect x="278" y="278" width="208" height="8"/><rect x="1114" y="714" width="208" height="8"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#f1ebdd" stroke-opacity=".65" stroke-width="2">
+    <path d="M94 154V54h100M1406 54h100v100M1506 846v100h-100M194 946H94V846"/>
+  </g>
+  <g fill="#f1ebdd" fill-opacity=".52" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3">
+    <text x="128" y="62">SIGNAL BLOOM / CONCEPT STUDY</text><text x="1348" y="946">S–03</text>
+  </g>
+</svg>
