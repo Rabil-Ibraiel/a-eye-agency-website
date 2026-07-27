@@ -20,7 +20,7 @@ function isActive(pathname: string, href: string) {
 }
 
 const desktopItemClass =
-  "relative flex h-11 items-center px-4 text-xs font-semibold tracking-[0.1em] text-white/66 uppercase transition-colors duration-[160ms] hover:text-white focus-visible:text-white";
+  "relative flex h-11 items-center px-6 text-xs font-semibold tracking-[0.1em] text-white/66 uppercase transition-colors duration-[160ms] hover:text-white focus-visible:text-white";
 
 const brandMark = (
   <Image
@@ -42,7 +42,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-black/96 text-white">
+    <header className="sticky top-0 z-40 bg-black/96 text-white after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.16)_18%,rgba(255,255,255,0.16)_82%,transparent_100%)]">
       <a
         href="#main-content"
         className="fixed top-2 left-2 z-[100] -translate-y-24 bg-primary px-4 py-3 font-semibold text-primary-foreground transition-transform focus:translate-y-0"
@@ -70,30 +70,38 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary navigation"
-          className="hidden items-center justify-self-center border border-white/10 lg:flex"
+          className="hidden items-center justify-self-center lg:flex"
         >
-          {navigation.map((item) => {
+          {navigation.map((item, index) => {
             const active = isActive(pathname, item.href);
-            return active ? (
-              <span
-                key={item.href}
-                aria-current="page"
-                className={cn(
-                  desktopItemClass,
-                  "bg-white/[0.07] text-white after:absolute after:right-4 after:bottom-1 after:left-4 after:h-px after:bg-primary",
+            return (
+              <div key={item.href} className="flex items-center">
+                {index > 0 ? (
+                  <span
+                    aria-hidden="true"
+                    className="h-6 w-px bg-[linear-gradient(180deg,transparent_0%,rgba(255,255,255,0.2)_50%,transparent_100%)]"
+                  />
+                ) : null}
+                {active ? (
+                  <span
+                    aria-current="page"
+                    className={cn(
+                      desktopItemClass,
+                      "text-white after:absolute after:right-6 after:bottom-1 after:left-6 after:h-px after:bg-primary",
+                    )}
+                  >
+                    {item.label}
+                  </span>
+                ) : (
+                  <Link
+                    href={item.href}
+                    prefetch={item.href === "/contact" ? false : undefined}
+                    className={desktopItemClass}
+                  >
+                    {item.label}
+                  </Link>
                 )}
-              >
-                {item.label}
-              </span>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                prefetch={item.href === "/contact" ? false : undefined}
-                className={desktopItemClass}
-              >
-                {item.label}
-              </Link>
+              </div>
             );
           })}
         </nav>
