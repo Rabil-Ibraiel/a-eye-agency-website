@@ -6,6 +6,11 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/content";
 
+const publicBasePath = (
+  process.env.NEXT_PUBLIC_BASE_PATH?.trim() ?? ""
+).replace(/\/+$/, "");
+const homePath = publicBasePath || "/";
+
 const homeIntroBootScript = `(() => {
   const root = document.documentElement;
   root.dataset.aeyeIntro = "skip";
@@ -14,14 +19,17 @@ const homeIntroBootScript = `(() => {
     const restored = navigation && navigation.type === "back_forward";
     const shouldReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const key = "aeye:intro:v2";
-    if (location.pathname === "/" && !restored && !shouldReduce && !sessionStorage.getItem(key)) {
+    const homePath = ${JSON.stringify(homePath)};
+    const currentPath = location.pathname.length > 1 && location.pathname.endsWith("/")
+      ? location.pathname.slice(0, -1)
+      : location.pathname;
+    if (currentPath === homePath && !restored && !shouldReduce && !sessionStorage.getItem(key)) {
       root.dataset.aeyeIntro = "run";
       sessionStorage.setItem(key, "1");
     }
   } catch {}
 })();`;
 
-const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim() ?? "";
 const transitionStyle = {
   "--page-transition-logo": `url("${publicBasePath}/brand/a-eye-logo.png")`,
 } as CSSProperties;
