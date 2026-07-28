@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { ViewTransition } from "react";
 import type { Project } from "@/types/content";
 import { ProjectMedia } from "@/components/project-media";
 import { Reveal } from "@/components/motion/reveal";
@@ -32,16 +33,23 @@ export function ProjectCard({
       <article className="project-card group">
         <Link
           href={`/work/${project.slug}`}
+          transitionTypes={["nav-forward"]}
           className="project-card-link focus-visible:outline-offset-8"
         >
-          <div className="crop-frame overflow-hidden bg-card">
-            <ProjectMedia
-              media={project.heroMedia}
-              priority={priority}
-              sizes={mediaSizes}
-              className="project-card-media transition-transform duration-[220ms] ease-[var(--ease-out)]"
-            />
-          </div>
+          <ViewTransition
+            name={`project-media-${project.slug}`}
+            share="morph"
+            default="none"
+          >
+            <div className="crop-frame overflow-hidden bg-card">
+              <ProjectMedia
+                media={project.heroMedia}
+                priority={priority}
+                sizes={mediaSizes}
+                className="project-card-media transition-transform duration-[220ms] ease-[var(--ease-out)]"
+              />
+            </div>
+          </ViewTransition>
           <div className="project-card-content mt-5 border-t border-border pt-4">
             <div className="project-card-title-block grid grid-cols-[1fr_auto] gap-x-5">
               <div>

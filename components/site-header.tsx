@@ -42,7 +42,10 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-40 bg-black/96 text-white after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.16)_18%,rgba(255,255,255,0.16)_82%,transparent_100%)]">
+    <header
+      className="sticky top-0 z-40 bg-black/96 text-white after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.16)_18%,rgba(255,255,255,0.16)_82%,transparent_100%)]"
+      style={{ viewTransitionName: "site-header" }}
+    >
       <a
         href="#main-content"
         className="fixed top-2 left-2 z-[100] -translate-y-24 bg-primary px-4 py-3 font-semibold text-primary-foreground transition-transform focus:translate-y-0"

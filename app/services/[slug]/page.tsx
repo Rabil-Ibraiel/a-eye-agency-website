@@ -35,6 +35,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <header className="shell section-space-compact">
           <Link
             href="/services"
+            transitionTypes={["nav-back"]}
             className="inline-flex min-h-11 items-center gap-2 font-mono text-[0.65rem] tracking-[0.13em] text-muted-foreground uppercase hover:text-foreground"
           >
             <ArrowLeft aria-hidden="true" className="size-4" />

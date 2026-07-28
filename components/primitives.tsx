@@ -73,6 +73,7 @@ export function TextLink({
   href,
   children,
   className,
+  direction,
 }: {
   href: string;
   children: React.ReactNode;
@@ -83,6 +84,9 @@ export function TextLink({
     <Link
       href={href}
       prefetch={href === "/contact" ? false : undefined}
+      transitionTypes={
+        direction ? [`nav-${direction}`] : undefined
+      }
       className={cn("link-line", className)}
     >
       <span>{children}</span>

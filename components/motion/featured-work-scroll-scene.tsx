@@ -170,6 +170,7 @@ export function FeaturedWorkScrollScene({
                       <Link
                         key={project.slug}
                         href={`/work/${project.slug}`}
+                        transitionTypes={["nav-forward"]}
                         aria-label={`View ${project.title}`}
                         aria-current={activeIndex === index ? "true" : undefined}
                         className="featured-work-index-link"

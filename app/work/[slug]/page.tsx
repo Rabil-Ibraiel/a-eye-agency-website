@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ViewTransition } from "react";
 import { CaseStudyRenderer } from "@/components/case-study-renderer";
 import { PageTransition } from "@/components/page-transition";
 import { ProjectMedia } from "@/components/project-media";
@@ -39,6 +40,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <header className="shell section-space-compact">
           <Link
             href="/work"
+            transitionTypes={["nav-back"]}
             className="inline-flex min-h-11 items-center gap-2 font-mono text-[0.65rem] tracking-[0.13em] text-muted-foreground uppercase hover:text-foreground"
           >
             <ArrowLeft aria-hidden="true" className="size-4" />
@@ -66,12 +68,18 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </header>
 
         <div className="shell">
-          <ProjectMedia
-            media={project.heroMedia}
-            priority
-            sizes="(max-width: 90rem) 100vw, 85rem"
-            className="aspect-[16/10]"
-          />
+          <ViewTransition
+            name={`project-media-${project.slug}`}
+            share="morph"
+            default="none"
+          >
+            <ProjectMedia
+              media={project.heroMedia}
+              priority
+              sizes="(max-width: 90rem) 100vw, 85rem"
+              className="aspect-[16/10]"
+            />
+          </ViewTransition>
           {project.heroMedia.caption ? (
             <p className="mt-3 font-mono text-[0.6rem] tracking-[0.12em] text-muted-foreground uppercase">
               {project.heroMedia.caption}
@@ -125,6 +133,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <p className="eyebrow">Next fictional project</p>
             <Link
               href={`/work/${nextProject.slug}`}
+              transitionTypes={["nav-forward"]}
               className="project-card group mt-8 grid gap-7 lg:grid-cols-12 lg:items-end"
             >
               <div className="lg:col-span-6 lg:row-start-1">
@@ -143,7 +152,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </section>
         ) : (
           <div className="shell section-space">
-            <TextLink href="/work">Back to work</TextLink>
+            <TextLink href="/work" direction="back">Back to work</TextLink>
           </div>
         )}
       </article>

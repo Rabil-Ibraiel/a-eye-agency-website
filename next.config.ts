@@ -9,6 +9,9 @@ const basePath = isGitHubPages
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  experimental: {
+    viewTransition: true,
+  },
   ...(isGitHubPages
     ? {
         output: "export" as const,

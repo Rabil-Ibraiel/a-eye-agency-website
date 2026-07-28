@@ -4,7 +4,10 @@ import { siteConfig } from "@/content";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/12 bg-black text-white">
+    <footer
+      className="border-t border-white/12 bg-black text-white"
+      style={{ viewTransitionName: "site-footer" }}
+    >
       <div className="shell section-space pb-8">
         <div className="editorial-grid gap-y-12">
           <div className="col-span-full lg:col-span-7">

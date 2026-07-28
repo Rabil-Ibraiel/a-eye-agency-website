@@ -211,7 +211,11 @@ export function FocusField({
               variant="outline"
               className="focus-atlas__link h-9 shrink-0 rounded-none border-white/20 bg-transparent px-3 text-[0.62rem] tracking-[0.1em] text-white uppercase hover:bg-white/10 hover:text-white"
             >
-              <Link href={activeTarget.href} prefetch={false}>
+              <Link
+                href={activeTarget.href}
+                prefetch={false}
+                transitionTypes={["nav-forward"]}
+              >
                 Open case
                 <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
               </Link>

@@ -9,6 +9,7 @@ export function ServiceIndex({ services }: { services: readonly Service[] }) {
         <Link
           key={service.slug}
           href={`/services/${service.slug}`}
+          transitionTypes={["nav-forward"]}
           data-home-reveal=""
           className="service-link group editorial-grid min-h-40 items-start border-b border-border py-6 transition-colors duration-200 hover:bg-foreground/[0.035] focus-visible:bg-foreground/[0.035] lg:items-center"
         >
