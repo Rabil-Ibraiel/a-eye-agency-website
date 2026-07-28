@@ -3,8 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  MotionConfig,
+  useReducedMotion,
+} from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +28,9 @@ function isActive(pathname: string, href: string) {
 const desktopItemClass =
   "relative flex h-11 items-center px-6 text-xs font-semibold tracking-[0.1em] text-white/66 uppercase transition-colors duration-[160ms] hover:text-white focus-visible:text-white";
 
+const revealEase = [0.16, 1, 0.3, 1] as const;
+const dismissEase = [0.7, 0, 0.84, 0] as const;
+
 const brandMark = (
   <Image
     src="/brand/a-eye-logo.png"
@@ -35,10 +44,12 @@ const brandMark = (
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const mobileNavRef = useRef<HTMLDetailsElement>(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const mobileNavButtonRef = useRef<HTMLButtonElement>(null);
+  const reduceMotion = useReducedMotion();
 
   function closeMobileNav() {
-    mobileNavRef.current?.removeAttribute("open");
+    setMobileNavOpen(false);
   }
 
   return (
@@ -126,69 +137,223 @@ export function SiteHeader() {
           </Button>
         </div>
 
-        <details
-          ref={mobileNavRef}
-          className="mobile-nav group justify-self-end lg:hidden"
-          onKeyDown={(event) => {
-            if (event.key === "Escape") {
-              closeMobileNav();
-              mobileNavRef.current?.querySelector("summary")?.focus();
-            }
-          }}
-        >
-          <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-white/25 text-white transition-colors hover:bg-white/10 focus-visible:bg-white/10">
-            <span className="sr-only group-open:hidden">Open navigation</span>
-            <span className="sr-only hidden group-open:block">Close navigation</span>
-            <Menu aria-hidden="true" className="size-5 group-open:hidden" />
-            <X aria-hidden="true" className="hidden size-5 group-open:block" />
-          </summary>
-          <div className="fixed inset-x-0 top-[4.25rem] bottom-0 z-30 flex flex-col border-t border-white/10 bg-black px-[var(--gutter)] py-3">
-            <nav aria-label="Mobile navigation" className="flex flex-1 flex-col">
-              {navigation.map((item, index) => {
-                const active = isActive(pathname, item.href);
-                const className = cn(
-                  "flex min-h-14 items-center justify-between border-b border-white/15 text-2xl font-medium tracking-[-0.04em]",
-                  active && "text-primary",
-                );
-                return active ? (
-                  <span key={item.href} aria-current="page" className={className}>
-                    <span>{item.label}</span>
-                    <span className="font-mono text-xs tracking-[0.13em] text-white/48">
-                      0{index + 1}
-                    </span>
-                  </span>
-                ) : (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    prefetch={item.href === "/contact" ? false : undefined}
-                    className={className}
-                    onClick={closeMobileNav}
-                  >
-                    <span>{item.label}</span>
-                    <span className="font-mono text-xs tracking-[0.13em] text-white/48">
-                      0{index + 1}
-                    </span>
-                  </Link>
-                );
-              })}
-              <Button
-                asChild
-                className="mt-auto h-12 rounded-none text-xs tracking-[0.1em] uppercase"
-              >
-                <Link
-                  href="/contact"
-                  prefetch={false}
-                  scroll={pathname === "/contact" ? false : undefined}
-                  onClick={closeMobileNav}
+        <MotionConfig reducedMotion="user">
+          <div
+            className="mobile-nav justify-self-end lg:hidden"
+            data-open={mobileNavOpen ? "true" : "false"}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") {
+                closeMobileNav();
+                mobileNavButtonRef.current?.focus();
+              }
+            }}
+          >
+            <motion.button
+              ref={mobileNavButtonRef}
+              type="button"
+              aria-controls="mobile-navigation-panel"
+              aria-expanded={mobileNavOpen}
+              aria-label={mobileNavOpen ? "Close navigation" : "Open navigation"}
+              className="relative z-40 flex size-11 items-center justify-center border border-white/25 text-white transition-colors hover:bg-white/10 focus-visible:bg-white/10"
+              whileTap={reduceMotion ? undefined : { scale: 0.94 }}
+              onClick={() => setMobileNavOpen((open) => !open)}
+            >
+              <span aria-hidden="true" className="relative block size-5">
+                <motion.span
+                  className="absolute top-1/2 left-0 block h-px w-5 bg-current"
+                  animate={
+                    mobileNavOpen
+                      ? { y: 0, rotate: 45 }
+                      : { y: -3.5, rotate: 0 }
+                  }
+                  transition={{
+                    duration: reduceMotion ? 0 : 0.24,
+                    ease: revealEase,
+                  }}
+                />
+                <motion.span
+                  className="absolute top-1/2 left-0 block h-px w-5 bg-current"
+                  animate={
+                    mobileNavOpen
+                      ? { y: 0, rotate: -45 }
+                      : { y: 3.5, rotate: 0 }
+                  }
+                  transition={{
+                    duration: reduceMotion ? 0 : 0.24,
+                    ease: revealEase,
+                  }}
+                />
+              </span>
+            </motion.button>
+
+            <AnimatePresence initial={false}>
+              {mobileNavOpen ? (
+                <motion.div
+                  key="mobile-navigation-panel"
+                  id="mobile-navigation-panel"
+                  className="fixed inset-x-0 top-[4.25rem] bottom-0 z-30 flex flex-col overflow-hidden bg-black px-[var(--gutter)] py-3"
+                  initial={
+                    reduceMotion
+                      ? { opacity: 0 }
+                      : { clipPath: "inset(0 0 100% 0)" }
+                  }
+                  animate={
+                    reduceMotion
+                      ? {
+                          opacity: 1,
+                          transition: { duration: 0.01 },
+                        }
+                      : {
+                          clipPath: "inset(0 0 0% 0)",
+                          transition: {
+                            duration: 0.46,
+                            ease: revealEase,
+                          },
+                        }
+                  }
+                  exit={
+                    reduceMotion
+                      ? {
+                          opacity: 0,
+                          transition: { duration: 0.01 },
+                        }
+                      : {
+                          clipPath: "inset(0 0 100% 0)",
+                          transition: {
+                            delay: 0.1,
+                            duration: 0.32,
+                            ease: dismissEase,
+                          },
+                        }
+                  }
                 >
-                  Start a project
-                  <ArrowUpRight data-icon="inline-end" aria-hidden="true" />
-                </Link>
-              </Button>
-            </nav>
+                  <motion.div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-px origin-left bg-primary"
+                    initial={{ scaleX: reduceMotion ? 1 : 0 }}
+                    animate={{ scaleX: 1 }}
+                    exit={{ scaleX: reduceMotion ? 1 : 0 }}
+                    transition={{
+                      delay: reduceMotion ? 0 : 0.12,
+                      duration: reduceMotion ? 0 : 0.42,
+                      ease: revealEase,
+                    }}
+                  />
+                  <nav
+                    aria-label="Mobile navigation"
+                    className="flex flex-1 flex-col"
+                  >
+                    {navigation.map((item, index) => {
+                      const active = isActive(pathname, item.href);
+                      const className = cn(
+                        "flex min-h-14 items-center justify-between border-b border-white/15 text-2xl font-medium tracking-[-0.04em]",
+                        active && "text-primary",
+                      );
+                      return (
+                        <motion.div
+                          key={item.href}
+                          initial={
+                            reduceMotion
+                              ? { opacity: 1 }
+                              : { opacity: 0, y: 18 }
+                          }
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                              delay: reduceMotion
+                                ? 0
+                                : 0.12 + index * 0.045,
+                              duration: reduceMotion ? 0 : 0.34,
+                              ease: revealEase,
+                            },
+                          }}
+                          exit={{
+                            opacity: reduceMotion ? 1 : 0,
+                            y: reduceMotion ? 0 : -8,
+                            transition: {
+                              delay: reduceMotion
+                                ? 0
+                                : (navigation.length - index) * 0.025,
+                              duration: reduceMotion ? 0 : 0.18,
+                              ease: dismissEase,
+                            },
+                          }}
+                        >
+                          {active ? (
+                            <span aria-current="page" className={className}>
+                              <span>{item.label}</span>
+                              <span className="font-mono text-xs tracking-[0.13em] text-white/48">
+                                0{index + 1}
+                              </span>
+                            </span>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              prefetch={
+                                item.href === "/contact" ? false : undefined
+                              }
+                              className={className}
+                              onClick={closeMobileNav}
+                            >
+                              <span>{item.label}</span>
+                              <span className="font-mono text-xs tracking-[0.13em] text-white/48">
+                                0{index + 1}
+                              </span>
+                            </Link>
+                          )}
+                        </motion.div>
+                      );
+                    })}
+                    <motion.div
+                      className="mt-auto"
+                      initial={
+                        reduceMotion ? { opacity: 1 } : { opacity: 0, y: 18 }
+                      }
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          delay: reduceMotion
+                            ? 0
+                            : 0.12 + navigation.length * 0.045,
+                          duration: reduceMotion ? 0 : 0.34,
+                          ease: revealEase,
+                        },
+                      }}
+                      exit={{
+                        opacity: reduceMotion ? 1 : 0,
+                        y: reduceMotion ? 0 : -8,
+                        transition: {
+                          duration: reduceMotion ? 0 : 0.18,
+                          ease: dismissEase,
+                        },
+                      }}
+                    >
+                      <Button
+                        asChild
+                        className="h-12 w-full rounded-none text-xs tracking-[0.1em] uppercase"
+                      >
+                        <Link
+                          href="/contact"
+                          prefetch={false}
+                          scroll={pathname === "/contact" ? false : undefined}
+                          onClick={closeMobileNav}
+                        >
+                          Start a project
+                          <ArrowUpRight
+                            data-icon="inline-end"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      </Button>
+                    </motion.div>
+                  </nav>
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
           </div>
-        </details>
+        </MotionConfig>
       </div>
     </header>
   );

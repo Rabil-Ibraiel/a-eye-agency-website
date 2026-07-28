@@ -572,10 +572,6 @@
     border-bottom: 1px solid currentColor;
   }
 
-  .mobile-nav > summary::-webkit-details-marker {
-    display: none;
-  }
-
   .focus-field-resolved {
     clip-path: circle(27% at 68% 46%);
     transition: clip-path 180ms var(--ease-out);
@@ -1632,7 +1628,7 @@
 
 }
 
-body:has(.mobile-nav[open]) {
+body:has(.mobile-nav[data-open="true"]) {
   overflow: hidden;
 }
 
