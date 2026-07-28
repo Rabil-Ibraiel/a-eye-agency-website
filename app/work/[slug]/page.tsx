@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { ViewTransition } from "react";
 import { CaseStudyRenderer } from "@/components/case-study-renderer";
 import { PageTransition } from "@/components/page-transition";
 import { ProjectMedia } from "@/components/project-media";
@@ -68,18 +67,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </header>
 
         <div className="shell">
-          <ViewTransition
-            name={`project-media-${project.slug}`}
-            share="morph"
-            default="none"
-          >
-            <ProjectMedia
-              media={project.heroMedia}
-              priority
-              sizes="(max-width: 90rem) 100vw, 85rem"
-              className="aspect-[16/10]"
-            />
-          </ViewTransition>
+          <ProjectMedia
+            media={project.heroMedia}
+            priority
+            sizes="(max-width: 90rem) 100vw, 85rem"
+            className="aspect-[16/10]"
+          />
           {project.heroMedia.caption ? (
             <p className="mt-3 font-mono text-[0.6rem] tracking-[0.12em] text-muted-foreground uppercase">
               {project.heroMedia.caption}

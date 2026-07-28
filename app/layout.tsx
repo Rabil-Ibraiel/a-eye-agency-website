@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import "./globals.css";
 import { ScrollRevealController } from "@/components/motion/scroll-reveal-controller";
 import { SiteFooter } from "@/components/site-footer";
@@ -19,6 +20,11 @@ const homeIntroBootScript = `(() => {
     }
   } catch {}
 })();`;
+
+const publicBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim() ?? "";
+const transitionStyle = {
+  "--page-transition-logo": `url("${publicBasePath}/brand/a-eye-logo.png")`,
+} as CSSProperties;
 
 function configuredMetadataBase() {
   const value = process.env.NEXT_PUBLIC_SITE_URL?.trim() || siteConfig.siteUrl;
@@ -68,11 +74,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html
+      lang="en"
+      className="h-full"
+      style={transitionStyle}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: homeIntroBootScript }} />
       </head>
       <body className="flex min-h-full flex-col">
+        <span
+          className="page-transition-curtain-source"
+          aria-hidden="true"
+        />
+        <span
+          className="page-transition-logo-source"
+          aria-hidden="true"
+        />
         <ScrollRevealController />
         <SiteHeader />
         <main id="main-content" className="flex-1">
