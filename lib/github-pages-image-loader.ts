@@ -11,8 +11,7 @@ export default function githubPagesImageLoader({
     return src;
   }
 
-  const repository = process.env.GITHUB_REPOSITORY?.split("/")[1];
-  const basePath = repository ? `/${repository}` : "";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   return `${basePath}${src.startsWith("/") ? src : `/${src}`}`;
 }
