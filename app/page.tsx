@@ -53,15 +53,26 @@ export default function HomePage() {
                   <Eyebrow className="home-hero__eyebrow">
                     {homePageContent.hero.eyebrow}
                   </Eyebrow>
-                  <h1 className="display-xl mt-6 max-w-[10ch]">
-                    <span className="home-hero__line">
+                  <h1
+                    className="display-xl mt-6 max-w-[10ch]"
+                    aria-label={homePageContent.hero.headline}
+                  >
+                    <span className="home-hero__line" aria-hidden="true">
                       <span className="home-hero__line-inner">
-                        See what <span className="editorial-accent text-primary">others</span>
+                        We don’t make
                       </span>
                     </span>
-                    <span className="home-hero__line">
+                    <span className="home-hero__line" aria-hidden="true">
                       <span className="home-hero__line-inner">
-                        do not<span className="text-primary">.</span>
+                        content<span className="text-primary">.</span>
+                      </span>
+                    </span>
+                    <span className="home-hero__line" aria-hidden="true">
+                      <span className="home-hero__line-inner">We make</span>
+                    </span>
+                    <span className="home-hero__line" aria-hidden="true">
+                      <span className="home-hero__line-inner editorial-accent text-primary">
+                        impact<span className="text-primary">.</span>
                       </span>
                     </span>
                   </h1>

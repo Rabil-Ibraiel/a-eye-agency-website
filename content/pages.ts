@@ -9,7 +9,7 @@ import type {
 export const homePageContent = {
   hero: {
     eyebrow: "AI Content · Motion · Design",
-    headline: "See What Others Do Not.",
+    headline: "We don’t make content. We make impact.",
     description:
       "A-Eye is a creative content agency combining human direction, AI production, motion, and design to create sharper brands and content.",
     primaryCta: { label: "Start a Project", href: "/contact" },

@@ -1206,12 +1206,20 @@
   }
 
   .home-hero__line:nth-child(2) .home-hero__line-inner {
-    animation-delay: calc(var(--home-entrance-offset) + 155ms);
+    animation-delay: calc(var(--home-entrance-offset) + 145ms);
+  }
+
+  .home-hero__line:nth-child(3) .home-hero__line-inner {
+    animation-delay: calc(var(--home-entrance-offset) + 200ms);
+  }
+
+  .home-hero__line:nth-child(4) .home-hero__line-inner {
+    animation-delay: calc(var(--home-entrance-offset) + 255ms);
   }
 
   .home-hero__support {
     animation: home-rise-in 620ms var(--ease-expo-out) both;
-    animation-delay: calc(var(--home-entrance-offset) + 235ms);
+    animation-delay: calc(var(--home-entrance-offset) + 330ms);
   }
 
   .home-hero__visual-enter {

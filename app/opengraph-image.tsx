@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
-export const alt = "A-Eye. See What Others Do Not.";
+export const alt = "A-Eye. We don’t make content. We make impact.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 56 }}>
         <div style={{ maxWidth: 820, fontSize: 92, lineHeight: 0.9, letterSpacing: "-0.06em", fontWeight: 650 }}>
-          See What Others Do Not.
+          We don’t make content. We make impact.
         </div>
         <div style={{ width: 124, height: 124, display: "flex", alignItems: "center", justifyContent: "center", border: "2px solid #ff3b01", color: "#ff3b01", fontSize: 54 }}>A.</div>
       </div>

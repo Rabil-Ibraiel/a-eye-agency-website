@@ -2,7 +2,7 @@ import type { SiteConfig } from "@/types/content"
 
 export const siteConfig = {
   brandName: "A-Eye.",
-  tagline: "See What Others Do Not.",
+  tagline: "We don’t make content. We make impact.",
   description:
     "A-Eye is a creative content agency combining human direction, AI production, motion, and design to create sharper brands and content.",
   siteUrl: null,
@@ -52,7 +52,7 @@ export const siteConfig = {
   ],
   availability: null,
   seo: {
-    defaultTitle: "A-Eye. — See What Others Do Not.",
+    defaultTitle: "A-Eye. — We don’t make content. We make impact.",
     titleTemplate: "%s — A-Eye.",
     description:
       "Human-led creative direction, AI production, motion, and design for sharper brands and content.",

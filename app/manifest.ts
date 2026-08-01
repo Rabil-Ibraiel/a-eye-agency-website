@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "A-Eye. — See What Others Do Not.",
+    name: "A-Eye. — We don’t make content. We make impact.",
     short_name: "A-Eye.",
     description:
       "Human-led creative direction, AI production, motion, and design.",
